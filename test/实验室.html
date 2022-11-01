@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <script src="./js/jquery.js"></script>
+    <scripte src="./bootstrap/js/bootstrap.min.js"></scripte>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav {
+            height: 64px;
+            width: 100%;
+            border: 1px solid cornflowerblue;
+            display: flex;
+        }
+
+        .list {
+            width: 180px;
+            height: 100vh;
+            background-color: white;
+            position: fixed;
+            left: -180px;
+            top: 0;
+            transition: linear .3s;
+            border-right: 1px solid #666;
+        }
+
+        .nav>.menulist {
+            width: 100%;
+            display: flex;
+            border: #b1c6ff 1px solid;
+        }
+
+        .nav>.menulist>svg {
+            margin: auto;
+        }
+
+        .nav>.search {
+            margin: auto;
+        }
+
+        .nav>.search>svg {
+            margin: auto;
+        }
+
+        .list>svg {
+            margin: 10px;
+        }
+
+        .space>img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="nav" id="nav">
+                    <div class="menulist">
+                        <!-- 点击展开侧边导航栏 -->
+                        <svg onclick="changenav()" t="1666233316815" class="icon" viewBox="0 0 1026 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="7455" width="22" height="22">
+                            <path
+                                d="M186.368 569.856h382.976c30.208 0 54.784-25.6 54.784-57.344 0-31.232-24.576-57.344-54.784-57.344H186.368c-30.208 0-54.784 25.6-54.784 57.344 0 31.744 24.576 57.344 54.784 57.344z m0-325.632h656.896c30.208 0 54.784-25.6 54.784-57.344 0-31.232-24.576-57.344-54.784-57.344H186.368c-30.208 0-54.784 25.6-54.784 57.344 0 31.744 24.576 57.344 54.784 57.344z m656.896 537.088H186.368c-30.208 0-54.784 25.6-54.784 57.344 0 31.232 24.576 57.344 54.784 57.344h656.896c30.208 0 54.784-25.6 54.784-57.344-0.512-31.232-25.088-57.344-54.784-57.344z m-108.032-452.608c-12.8-13.312-33.792-13.312-46.592 0-6.144 6.656-9.728 15.36-9.728 24.576v319.488c0 18.944 14.848 34.304 32.768 34.304 8.704 0 16.896-3.584 23.552-10.24l153.088-159.744c12.8-13.312 12.8-35.328 0-48.64l-153.088-159.744z"
+                                p-id="7456"></path>
+                        </svg>
+
+                        <div class="search">
+                            <svg t="1666233487962" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" p-id="12895" width="22" height="22">
+                                <path
+                                    d="M995.209792 859.621209c17.352203 17.350157 28.086685 41.318034 28.086685 67.807339 0 52.928466-42.916439 95.869465-95.869465 95.869465-26.463722 0-50.429553-10.734482-67.781756-28.086685l0 0L578.68426 714.24726c-57.097416 33.703613-123.432217 53.401234-194.509019 53.401234-211.783451 0-383.472741-171.688267-383.472741-383.472741S172.390767 0.703011 384.176264 0.703011s383.472741 171.687244 383.472741 383.471718c0 71.076802-19.696598 137.41058-53.402257 194.483436L995.209792 859.621209 995.209792 859.621209zM384.176264 96.54587c-158.831448 0-287.605324 128.772852-287.605324 287.62886 0 158.832472 128.772852 287.606347 287.605324 287.606347S671.781588 543.007201 671.781588 384.17473C671.779541 225.318722 543.008736 96.54587 384.176264 96.54587z"
+                                    p-id="12896"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 导航栏切换
+        var ischangenav = false;
+        var changenav = function () {
+            if (ischangenav) {
+                // $(this).css({"display": "none"})
+                ischangenav = false;
+                $("#list").css({
+                    "left": "-180px",
+                })
+            } else {
+                // $(this).css({"disply":"block"})
+                ischangenav = true;
+                $("#list").css({
+                    "left": "-0",
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>

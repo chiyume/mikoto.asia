@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Pio/static/pio.css">
+    <script src="./Pio/static/l2d.js"></script>
+    <script src="./Pio/static/pio.js"></script>
+
+
+    <style>
+        body{
+            background-image: url(./img/10.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pio-container left">
+        <div class="pio-action"></div>
+        <canvas id="pio" width="280" height="320"></canvas>
+    </div>
+<script>
+    var pio = new Paul_Pio({
+    "mode": "fixed",
+    "hidden": true,
+    "content": {
+        "welcome": ["欢迎来到保罗的小宇宙！", "今天天气不错，一起来玩吧！", "博主每天都有些折腾记录，欢迎前往他的小窝阅读~"],
+        "custom": [
+            {"selector": ".comment-form", "text": "欢迎参与本文评论，别发小广告噢~"},
+            {"selector": ".home-social a:last-child", "text": "在这里可以了解博主的日常噢~"},
+            {"selector": ".post-item a", "type": "read"},
+            {"selector": ".post-content a, .page-content a", "type": "link"}
+        ]
+    },
+    "night": "single.night()",
+    "model": ["./models/kuroko/kuroko.model.json","./models/mikoto/mikoto.model.json"]
+});
+</script>
+</body>
+
+</html>

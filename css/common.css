@@ -1,0 +1,258 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: SpringFont;
+
+}
+
+@font-face {
+    font-family: 'SpringFont';
+    src: url(/font/spring.ttf);
+}
+
+
+/* 侧边导航栏 */
+.asidebox {
+    width: 200px;
+    height: 100vh;
+    box-shadow: 0px 0px 4px black;
+    /* 固定屏幕左边 */
+    position: fixed;
+    left: -200px;
+    top: 0;
+    transition: linear .4s;
+    background-color: white;
+    z-index: 99;
+}
+
+.asidebox .btn {
+    background-color: pink;
+    position: fixed;
+    left: 0px;
+    top: 45vh;
+    width: 18px;
+    height: 80px;
+    z-index: 99;
+    overflow: hidden;
+    border-radius: 0px 5px 5px 0px;
+    display: flex;
+    transition: linear .4s;
+}
+
+.asidebox .btn>i {
+    margin: auto;
+    color: white;
+    font-size: 22px;
+    left: -10px;
+}
+
+.asidebox>img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    top: -80px;
+}
+
+/* 侧边导航列表 */
+
+.nav-item a {
+    color: inherit;
+    display: block
+}
+
+.nav-item>a {
+    z-index: 0;
+    cursor: pointer;
+    padding: 1em 2em;
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-item>a::before {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: .5em;
+    content: '';
+    z-index: -1;
+    position: absolute;
+    transition: linear .3s
+}
+
+.nav-item>a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-item>a:hover::before {
+    width: 100%
+}
+
+.nav-item:nth-child(1)>a::before {
+    background: #ff8b46
+}
+
+.nav-item:nth-child(2)>a::before {
+    background: #ffc71d
+}
+
+.nav-item:nth-child(3)>a::before {
+    background: #d4f00f
+}
+
+.nav-item:nth-child(4)>a::before {
+    background: #b1c6ff
+}
+
+.nav-item:nth-child(5)>a::before {
+    background: #dcb5ff
+}
+
+.nav-item:nth-child(6)>a::before {
+    background: #ff9fab
+}
+
+.nav-item:nth-child(7)>a::before {
+    background: #eae489
+}
+
+.nav-item:nth-child(8)>a::before {
+    background: #acf0dc
+}
+
+.nav-item:nth-child(9)>a::before {
+    background: #f9dba7
+}
+
+.nav-item:nth-child(10)>a::before {
+    background: #a9d6f6
+}
+
+.nav-item:nth-child(11)>a::before {
+    background: #b5e8a4
+}
+
+.nav-item:nth-child(12)>a::before {
+    background: #ffb7a5
+}
+
+.toTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 60px;
+    z-index: 1;
+}
+.toTop>img{
+    width: 100%;
+    height: 100%;
+}
+
+/* 文字遮罩，鼠标悬停显示，就是背景颜色变化而已 */
+/* 标签加上title属性，鼠标悬停显示提示 */
+.black {
+    background-color: black;
+    color: black ;
+    transition: .4s all;
+    display: inline-block;
+}
+
+.black:hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+/* 水平导航条,手机不显示了 */
+.mdheader{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    transition: all .3s;
+    z-index: 9;
+    padding: 4px 10px;
+    color: white;
+}
+.mdheader>ul{
+    display: flex;
+}
+.mdheader:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.mdheader li{
+    padding: 20px 30px;
+}
+.mdheader a{
+    border-bottom: #b1c6ff00 4px solid;
+    transition: linear .3s;
+}
+.mdheader a:hover{
+    border-bottom: #b1c6ff 4px solid;
+    text-decoration: none;
+    color: #b1c6ff;
+}
+
+.mdheader>img{
+    height: 64px;
+}
+
+/* .mdheader>ul{
+    margin: auto;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.mdheader>.ul>a{
+    margin: auto;
+    box-sizing: border-box;
+    padding: 20px 20px;
+    text-decoration: none;
+    border-bottom: #b1c6ff00 4px solid;
+    transition: all .4s;
+}
+.mdheader>.ul>a:hover{
+    text-decoration: none;
+    border-bottom: #b1c6ff 4px solid;
+    color: #b1c6ff;
+} */
+/* 手机header */
+.xsheader{
+    top: 0;
+    left: 0;
+    height: 64px;
+    width: 100%;
+    background-color: #ffffffcc;
+    position: fixed;
+    z-index: 9;
+    padding: 5px;
+}
+.xsheader>.logo{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+.xsheader>img{
+    height: 100%;
+    object-fit: cover;
+    margin: auto;
+}
+/* footer */
+.footer{
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    height: 100px;
+    display: flex;
+}
+.footer>.footerbox{
+    margin: auto;
+}
+
+
+
+

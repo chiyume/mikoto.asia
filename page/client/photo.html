@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <script src="/js/jquery.js"></script>
+    <script src="/bootstrap/js/bootstrap.js"></script>
+    <!-- live2d依赖 Pio -->
+    <link rel="stylesheet" href="/Pio/static/pio.css">
+    <script src="/Pio/static/l2d.js"></script>
+    <script src="/Pio/static/pio.js"></script>
+    <!-- 组件动画依赖 -->
+    <link rel="stylesheet" href="/static/css/site.css">
+    <link rel="stylesheet" href="/static/css/libs/animate.css">
+
+    <link rel="stylesheet" href="/css/photowall.css">
+</head>
+<style>
+
+</style>
+
+<body>
+    <!-- Pio live2d -->
+    <div class="pio-container left" style="z-index: 9999 !important;">
+        <div class="pio-action"></div>
+        <canvas id="pio" width="260" height="280"></canvas>
+    </div>
+    <!-- 水平导航，手机不显示 -->
+    <div class="mdheader hidden-xs">
+        <img src="/logo.png" alt="">
+        <ul>
+            <a href="/index.html">
+                <li>首页</li>
+            </a>
+            <a href="/page/client/photo.html">
+                <li>照片墙</li>
+            </a>
+            <a href="/page/client/ink.html">
+                <li>水墨画板</li>
+            </a>
+            <a href="/page/client/night.html">
+                <li>实验室</li>
+            </a>
+            <a href="/page/about/about.html">
+                <li>关于我</li>
+            </a>
+            <a style="visibility: hidden;">
+                <li>用来占个位</li>
+            </a>
+        </ul>
+    </div>
+    <!-- 只在手机显示,水平，没有导航 的条 -->
+    <div class="xsheader visible-xs">
+        <div class="logo">
+            <img src="/logo.png" alt="">
+        </div>
+    </div>
+    <!-- 侧边导航栏 -->
+    <div class="asidebox" id="asidenav">
+        <div class="btn" id="navbtn" onclick="changenav()">
+            <i class="glyphicon glyphicon-triangle-right"></i>
+        </div>
+        <img src="/images/UiharuKazari.png" alt="" id="role">
+        <div class="nav-item">
+            <a href="/index.html">首页</a>
+        </div>
+        <div class="nav-item">
+            <a href="/page/client/photo.html">照片墙</a>
+        </div>
+        <div class="nav-item">
+            <a href="/page/client/ink.html">水墨画贴</a>
+        </div>
+        <div class="nav-item">
+            <a href="/page/client/night.html">实验室</a>
+        </div>
+        <div class="nav-item">
+            <a href="/page/about/about.html">关于</a>
+        </div>
+    </div>
+    <!-- 返回顶部 -->
+    <a href="#" class="toTop">
+        <img src="/gif/lolisister2.gif" title="返回顶部" id="toTop">
+    </a>
+
+    <!-- 内容区域 -->
+    <div class="space"></div>
+    <div class="photowall" id="photowall">
+        <!-- 在这里放图片 -->
+    </div>
+    <div class="more">
+        <div onclick="moreimg()" class="btn"><span id="moremessage">加载更多</span></div>
+    </div>
+    <!-- 侧边导航栏点击弹出关闭，按钮颜色变换，人物切换 -->
+    <script src="/js/asidenav.js"></script>
+    <!-- live2d配置 -->
+    <script src="/js/live2d_init.js"></script>
+    <!-- 轮播图切换 -->
+    <script src="/js/loopimg.js"></script>
+    <!-- 图片加载更多 -->
+    <script>
+        // 每次加载图片数量和默认加载数量
+        var photoNumber = 10;
+        var imgitemlist = [
+        {
+        id : 1,
+        imgsURL:"/img/1.jpg",
+    },
+    {
+        id : 2,
+        imgsURL:"/img/2.jpg",
+    },
+    {
+        id : 3,
+        imgsURL:"/img/3.jpg",
+    },
+    {
+        id : 4,
+        imgsURL:"/img/4.jpg",
+    },
+    {
+        id : 5,
+        imgsURL:"/img/5.jpg",
+    },
+    {
+        id : 6,
+        imgsURL:"/img/6.jpg",
+    },
+    {
+        id : 7,
+        imgsURL:"/img/7.jpg",
+    },
+    {
+        id : 8,
+        imgsURL:"/img/8.png",
+    },
+    {
+        id : 9,
+        imgsURL:"/img/9.jpg",
+    },
+    {
+        id : 10,
+        imgsURL:"/img/10.jpg",
+    },
+    {
+        id : 10,
+        imgsURL:"/img/11.jpg",
+    },
+    {
+        id : 10,
+        imgsURL:"/img/12.jpg",
+    },
+    {
+        id : 10,
+        imgsURL:"/img/13.png",
+    },
+    {
+        id : 10,
+        imgsURL:"/img/14.png",
+    },
+    {
+        id : 10,
+        imgsURL:"/img/15.jpg",
+    },
+    {
+        id : 10,
+        imgsURL:"/img/16.png",
+    },
+        ];
+        for (var i = 0; i < photoNumber; i++) {
+            if (i % 2 == 0) {
+                $("#photowall").append($('<div class="imgitem wow slideInLeft">' +
+                    '<img src="' + imgitemlist[i].imgsURL + '" alt="">' +
+                    '</div>'));
+            } else {
+                $("#photowall").append($('<div class="imgitem wow slideInRight">' +
+                    '<img src="' + imgitemlist[i].imgsURL + '" alt="">' +
+                    '</div>'));
+            }
+        }
+        var imgIndex = photoNumber;
+        var number = 0;
+        var moreimg = function () {
+            var have = false;
+            for (var i = imgIndex; i < imgitemlist.length; i++) {
+                if (number == photoNumber) {
+                    imgIndex = imgIndex + photoNumber;
+                    number = 0;
+                    break;
+                }
+                if (i == imgitemlist.length - 1) {
+                    imgIndex = imgitemlist.length;
+                }
+                if (i % 2 == 0) {
+                    $("#photowall").append($('<div class="imgitem wow slideInLeft">' +
+                        '<img src="' + imgitemlist[i].imgsURL + '" alt="">' +
+                        '</div>'));
+                } else {
+                    $("#photowall").append($('<div class="imgitem wow slideInRight">' +
+                        '<img src="' + imgitemlist[i].imgsURL + '" alt="">' +
+                        '</div>'));
+                }
+                have = true;
+                number++;
+            }
+            if (!have) {
+                $("#moremessage").html("已经到底了 QWQ (〃＞＿＜;〃)")
+            }
+        }
+    </script>
+    <!-- 组件动画 -->
+    <script src="/static/js/wow.js"></script>
+    <script>
+        wow = new WOW(
+            {
+                animateClass: 'animated',
+                offset: 50,
+                callback: function (box) {
+                }
+            }
+        );
+        wow.init();
+    </script>
+</body>
+
+</html>

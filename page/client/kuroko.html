@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- live2d依赖 Pio -->
+    <link rel="stylesheet" href="/Pio/static/pio.css">
+    <script src="/Pio/static/l2d.js"></script>
+    <script src="/Pio/static/pio.js"></script>
+
+    <link rel="stylesheet" href="/css/details.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <script src="/js/jquery.js"></script>
+    <script src="/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+    <!-- Pio live2d -->
+    <div class="pio-container left" style="z-index: 9999 !important;">
+        <div class="pio-action"></div>
+        <canvas id="pio" width="220" height="260"></canvas>
+    </div>
+    <!-- 水平导航，手机不显示 -->
+    <div class="mdheader hidden-xs">
+        <img src="/logo.png" alt="">
+        <ul>
+            <a href="/index.html">
+                <li>首页</li>
+            </a>
+            <a href="/page/client/photo.html">
+                <li>照片墙</li>
+            </a>
+            <a href="/page/client/ink.html">
+                <li>水墨画板</li>
+            </a>
+            <a href="/page/client/night.html">
+                <li>实验室</li>
+            </a>
+            <a href="/page/about/about.html">
+                <li>关于我</li>
+            </a>
+            <a style="visibility: hidden;">
+                <li>用来占个位</li>
+            </a>
+        </ul>
+    </div>
+    <!-- 只在手机显示,水平，没有导航 的条 -->
+    <div class="xsheader visible-xs">
+        <div class="logo">
+            <img src="/logo.png" alt="">
+        </div>
+    </div>
+    <!-- 侧边导航栏 -->
+    <div class="asidebox" id="asidenav">
+        <div class="btn" id="navbtn" onclick="changenav()">
+            <i class="glyphicon glyphicon-triangle-right"></i>
+        </div>
+        <img src="/images/UiharuKazari.png" alt="" id="role">
+        <div class="nav-item">
+            <a href="/index.html">首页</a>
+        </div>
+        <div class="nav-item">
+            <a href="/page/client/photo.html">照片墙</a>
+        </div>
+        <div class="nav-item">
+            <a href="/page/music/music.html">音乐</a>
+        </div>
+        <div class="nav-item">
+            <a href="/page/client/ink.html">水墨画贴</a>
+        </div>
+        <div class="nav-item">
+            <a href="/page/client/night.html">实验室</a>
+        </div>
+        <div class="nav-item">
+            <a href="/page/client/about.html">关于</a>
+        </div>
+    </div>
+    <div style="height: 64px;"></div>
+    <div class="details">
+        <p class="title">
+            <svg t="1667113349193" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                p-id="9885" width="28" height="28">
+                <path
+                    d="M690.176 843.776l239.616-358.4c10.24-14.336 6.144-32.768-8.192-43.008-4.096-4.096-10.24-6.144-16.384-6.144H716.8v-225.28c0-16.384-14.336-30.72-30.72-30.72-10.24 0-20.48 6.144-24.576 14.336L421.888 552.96c-10.24 14.336-6.144 32.768 8.192 43.008 4.096 4.096 10.24 6.144 16.384 6.144H634.88v225.28c0 16.384 14.336 30.72 30.72 30.72 10.24 0 20.48-6.144 24.576-14.336z"
+                    p-id="9886" fill="#1296db"></path>
+                <path
+                    d="M204.8 231.424h204.8c34.816 0 61.44 26.624 61.44 61.44s-26.624 61.44-61.44 61.44H204.8c-34.816 0-61.44-26.624-61.44-61.44s26.624-61.44 61.44-61.44z m0 491.52h204.8c34.816 0 61.44 26.624 61.44 61.44s-26.624 61.44-61.44 61.44H204.8c-34.816 0-61.44-26.624-61.44-61.44s26.624-61.44 61.44-61.44z m-81.92-245.76h163.84c34.816 0 61.44 26.624 61.44 61.44s-26.624 61.44-61.44 61.44H122.88c-34.816 0-61.44-26.624-61.44-61.44s26.624-61.44 61.44-61.44z"
+                    opacity=".3" p-id="9887" fill="#1296db"></path>
+            </svg>
+            <span>白井黑子</span>
+        </p>
+        <img src="/img/17.jpg" alt="">
+        <div class="table">
+            <table>
+                <tr style="border-top: dotted 2px rgb(182, 182, 182);">
+                    <td class="blod">姓名</td>
+                    <td>
+                        <p>しらい くろこ</p>
+                        <p>白井 黑子</p>
+                        <p>Shirai Kuroko</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="blod">
+                        配音演员
+                    </td>
+                    <td>     
+                        新井里美
+                    </td>
+                </tr>
+                <tr>
+                    <td class="blod">
+                        能力
+                    </td>
+                    <td>     
+                        空间移动(Teleport) 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="blod">
+                        等级
+                    </td>
+                    <td>
+                        <p style="font-size: 12px;">Level4</p>
+                        <p>大能力者</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="blod">
+                        身高
+                    </td>
+                    <td>
+                        152cm
+                    </td>
+                </tr>
+                <tr>
+                    <td class="blod">
+                        年龄
+                    </td>
+                    <td>
+                        13
+                    </td>
+                </tr>
+                <tr>
+                    <td class="blod">
+                        萌点
+                    </td>
+                    <td>
+                        <span class="lable">百合</span>
+                        <span class="lable">“淑女”</span>
+                        <span class="lable">学妹</span>
+                        <span class="lable">贫乳</span>
+                        <span class="lable">痴女</span>
+                        <span class="lable black" onclick="change(this)" title="你知道得太多了">抖m</span>
+                        <span class="lable">姐控</span>
+                        <span class="lable">腹黑</span>
+                        <span class="lable">双马尾</span>
+                        <span class="lable">吃醋</span>
+                        <span class="lable black" onclick="change(this)" title="你知道得太多了">电脑配件</span>
+                        <span class="lable">大小姐</span>
+                        <span class="lable">制服</span>
+                        <span class="lable">风纪委员</span>
+                        <span class="lable">暴露狂(美琴限定)</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- 底部footer -->
+    <div class="footer">
+        <div class="footerbox">
+            <p>© 2022-2023 | Chiyume</p>
+            <p>我可能不是最爱你的人，但我最爱的人一定是你。</p>
+            <p>All is in the darkness in the past!</p>
+        </div>
+    </div>
+    <!--定时器取消文字遮罩3s-->
+    <script>
+        function change(bg) {
+            $(bg).css({
+                "background-color": "rgba(255, 255, 255, 0)",
+            })
+            setTimeout(function () {
+                $(bg).css({
+                    "background-color": "rgba(0, 0, 0)",
+                })
+            }, 3000)
+        }
+    </script>
+        <!-- 侧边导航栏点击弹出关闭，按钮颜色变换，人物切换 -->
+        <script src="/js/asidenav.js"></script>
+</body>
+</html>

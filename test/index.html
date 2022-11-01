@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="topnav">
+                    <svg onclick="changenav()" t="1666233316815" class="icon" viewBox="0 0 1026 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="7455" width="22" height="22">
+                            <path
+                                d="M186.368 569.856h382.976c30.208 0 54.784-25.6 54.784-57.344 0-31.232-24.576-57.344-54.784-57.344H186.368c-30.208 0-54.784 25.6-54.784 57.344 0 31.744 24.576 57.344 54.784 57.344z m0-325.632h656.896c30.208 0 54.784-25.6 54.784-57.344 0-31.232-24.576-57.344-54.784-57.344H186.368c-30.208 0-54.784 25.6-54.784 57.344 0 31.744 24.576 57.344 54.784 57.344z m656.896 537.088H186.368c-30.208 0-54.784 25.6-54.784 57.344 0 31.232 24.576 57.344 54.784 57.344h656.896c30.208 0 54.784-25.6 54.784-57.344-0.512-31.232-25.088-57.344-54.784-57.344z m-108.032-452.608c-12.8-13.312-33.792-13.312-46.592 0-6.144 6.656-9.728 15.36-9.728 24.576v319.488c0 18.944 14.848 34.304 32.768 34.304 8.704 0 16.896-3.584 23.552-10.24l153.088-159.744c12.8-13.312 12.8-35.328 0-48.64l-153.088-159.744z"
+                                p-id="7456"></path>
+                        </svg>
+
+                </div>
+                <!-- 侧边导航 -->
+                <div class="asidenav" id="asidenav">
+                    <!-- 点击关闭侧边导航栏 -->
+                    <svg onclick="changenav()" t="1666233383046" class="icon" viewBox="0 0 1026 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="7910" width="22" height="22">
+                        <path
+                            d="M843.264 455.68H459.776c-30.208 0-54.784 25.6-54.784 57.344 0 31.232 24.576 57.344 54.784 57.344h382.976c30.208 0 54.784-25.6 54.784-57.344 0-31.744-24.576-57.344-54.272-57.344zM186.368 244.224h656.896c30.208 0 54.784-25.6 54.784-57.344 0-31.232-24.576-57.344-54.784-57.344H186.368c-30.208 0-54.784 25.6-54.784 57.344 0 31.744 24.576 57.344 54.784 57.344z m656.896 537.088H186.368c-30.208 0-54.784 25.6-54.784 57.344 0 31.232 24.576 57.344 54.784 57.344h656.896c30.208 0 54.784-25.6 54.784-57.344-0.512-31.232-25.088-57.344-54.784-57.344zM294.4 328.704L141.312 488.448c-12.8 13.312-12.8 35.328 0 48.64l153.088 159.744c12.8 13.312 33.792 13.312 46.592 0 6.144-6.656 9.728-15.36 9.728-24.576V353.28c0-18.944-14.848-34.304-32.768-34.304-9.216-0.512-17.408 3.072-23.552 9.728z"
+                            p-id="7911"></path>
+                    </svg>
+                    <div class="space" style="height: 200px;">
+                        <img src="./img/10.png" alt="">
+                    </div>
+                    <nav class="side-nav">
+                        <div class="nav-item">
+                            <a href="index.html" data-pjax-state="load">首页</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="实验室.html" data-pjax-state="load">实验室</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="resume.html" data-pjax-state="">关于</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="test.html" data-pjax-state="">赞助</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 导航栏切换
+        var ischangenav = false;
+        var changenav = function () {
+            if (ischangenav) {
+                // $(this).css({"display": "none"})
+                ischangenav = false;
+                $("#asidenav").css({
+                    "left": "-180px",
+                })
+            } else {
+                // $(this).css({"disply":"block"})
+                ischangenav = true;
+                $("#asidenav").css({
+                    "left": "-0",
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>
